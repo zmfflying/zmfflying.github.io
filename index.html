@@ -12,7 +12,7 @@
 <meta property="og:title" content="清净小筑">
 <meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;index.html">
 <meta property="og:site_name" content="清净小筑">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="ch">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="清净小筑" type="application/atom+xml">
@@ -141,19 +141,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-iOS开发系列之 app 的一天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-iOS开发系列之内存泄漏分析（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/">iOS开发系列之 app 的一天</a>
+      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/">iOS开发系列之内存泄漏分析（上）</a>
     </h1>
   
 
         
-        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/" class="archive-article-date">
+        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
   	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
 </a>
         
@@ -161,9 +161,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。</p>
+        <p> iOS自从引入ARC机制后，一般的内存管理就可以不用我们码农来负责了，但是一些操作如果不注意，还是会引起内存泄漏。</p>
+<p>本文主要介绍一下内存泄漏的原理、常规的检测方法以及出现的常用场景和修改方法。</p>
         
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/#more">more >></a>
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/#more">more >></a>
         
       
 
@@ -176,7 +177,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -292,19 +293,19 @@
 
 
   
-    <article id="post-iOS开发系列之内存泄漏分析（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-iOS开发系列之内存泄漏分析（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/">iOS开发系列之内存泄漏分析（上）</a>
+      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/">iOS开发系列之内存泄漏分析（下）</a>
     </h1>
   
 
         
-        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
+        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
   	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
 </a>
         
@@ -312,10 +313,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> iOS自从引入ARC机制后，一般的内存管理就可以不用我们码农来负责了，但是一些操作如果不注意，还是会引起内存泄漏。</p>
-<p>本文主要介绍一下内存泄漏的原理、常规的检测方法以及出现的常用场景和修改方法。</p>
+        <p>20190702更新，新增 webView 的内存泄漏分析，欢迎大家评论补充。</p>
+<p>接<a href="https://www.jianshu.com/p/1b06751130c8" target="_blank" rel="noopener">上篇</a>，本篇主要讲解通知和 KVO 不移除观察者、block 循环引用 、NSThread 和 RunLoop一起使用造成的内存泄漏。</p>
         
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/#more">more >></a>
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/#more">more >></a>
         
       
 
@@ -328,7 +329,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -512,72 +513,6 @@
 
 
   
-    <article id="post-iOS开发系列之内存泄漏分析（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/">iOS开发系列之内存泄漏分析（下）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>20190702更新，新增 webView 的内存泄漏分析，欢迎大家评论补充。</p>
-<p>接<a href="https://www.jianshu.com/p/1b06751130c8" target="_blank" rel="noopener">上篇</a>，本篇主要讲解通知和 KVO 不移除观察者、block 循环引用 、NSThread 和 RunLoop一起使用造成的内存泄漏。</p>
-        
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-步步为营" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -701,6 +636,71 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/06/%E9%86%92%E6%9D%A5%E7%BB%88%E8%A7%89%E6%98%AF%E5%B9%B3%E5%B8%B8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS开发系列之 app 的一天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/">iOS开发系列之 app 的一天</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/" class="archive-article-date">
+  	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。</p>
+        
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/">展开全文 >></a>
         </p>
       
 
