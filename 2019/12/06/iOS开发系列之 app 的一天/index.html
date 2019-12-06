@@ -9,6 +9,7 @@
   <title>iOS开发系列之 app 的一天 | 清净小筑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。">
+<meta name="keywords" content="开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发系列之 app 的一天">
 <meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9&#x2F;index.html">
@@ -18,7 +19,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-5fec4ff437cd3fe7.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-25347d04c8889436.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
-<meta property="og:updated_time" content="2019-12-06T09:07:37.975Z">
+<meta property="og:updated_time" content="2019-12-06T09:47:02.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
   
@@ -61,7 +62,9 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">技术</a></li>
+	        
+				<li><a href="/tags/%E5%BC%80%E5%8F%91/">开发</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
@@ -111,6 +114,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -127,11 +132,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">技术</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/%E5%BC%80%E5%8F%91/">开发</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a></li>
 		        
 				</ul>
 			</nav>
@@ -204,6 +211,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -217,15 +235,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/06/%E9%86%92%E6%9D%A5%E7%BB%88%E8%A7%89%E6%98%AF%E5%B9%B3%E5%B8%B8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          醒来终觉是平常
-        
-      </div>
-    </a>
   
+    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS开发系列之内存泄漏分析（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
