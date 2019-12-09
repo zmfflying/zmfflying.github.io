@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zmfflying.github.io">
-  <title>步步为营 | 清净小筑</title>
+  <title>iOS开发系列之性能优化 | 清净小筑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一直以来，我都是一个矛盾的人，一个纠结的灵魂。">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="本篇主要记录一下我对界面优化、时间优化和耗电优化、安装包瘦身上的一些探索。我尽量按照自己的理解来进行描述，如有不当，欢迎指正。 一、界面优化1、卡顿原理要了解卡顿原理，需要对帧缓冲区、垂直同步、CPU 和 GPU 几个词进行一下了解，然后综合起来，就可以得到卡顿的答案。 1.1、帧缓冲区听起来很高大上，其实就是用来存放每一帧画面数据的一个 “仓库”，一个仓库只存放一帧画面的数据，iOS 一直是双缓">
+<meta name="keywords" content="开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="步步为营">
-<meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E6%AD%A5%E6%AD%A5%E4%B8%BA%E8%90%A5&#x2F;index.html">
+<meta property="og:title" content="iOS开发系列之性能优化">
+<meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;2019&#x2F;12&#x2F;09&#x2F;iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96&#x2F;index.html">
 <meta property="og:site_name" content="清净小筑">
-<meta property="og:description" content="一直以来，我都是一个矛盾的人，一个纠结的灵魂。">
+<meta property="og:description" content="本篇主要记录一下我对界面优化、时间优化和耗电优化、安装包瘦身上的一些探索。我尽量按照自己的理解来进行描述，如有不当，欢迎指正。 一、界面优化1、卡顿原理要了解卡顿原理，需要对帧缓冲区、垂直同步、CPU 和 GPU 几个词进行一下了解，然后综合起来，就可以得到卡顿的答案。 1.1、帧缓冲区听起来很高大上，其实就是用来存放每一帧画面数据的一个 “仓库”，一个仓库只存放一帧画面的数据，iOS 一直是双缓">
 <meta property="og:locale" content="ch">
-<meta property="og:updated_time" content="2019-12-06T09:06:59.830Z">
+<meta property="og:updated_time" content="2019-12-09T08:49:37.549Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="清净小筑" type="application/atom+xml">
@@ -149,32 +149,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-步步为营" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS开发系列之性能优化" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      步步为营
+      iOS开发系列之性能优化
     </h1>
   
 
         
-        <a href="/2019/12/06/%E6%AD%A5%E6%AD%A5%E4%B8%BA%E8%90%A5/" class="archive-article-date">
-  	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+        <a href="/2019/12/09/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2019-12-09T08:43:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一直以来，我都是一个矛盾的人，一个纠结的灵魂。</p>
-<a id="more"></a>
-
-<p>所谓的野心，带给我的，是无穷无尽的心慌。不知道什么时候开始，总是在担心自己做的不够好，担心成长的速度不够快，学习的时候想放肆，放肆的时候却又觉得罪恶。</p>
-<p>直到来了武汉，决心健身之后，我才开始收获到内心的一些安宁。不管是顺着脸颊流下的一行行汗水，还是沙袋上打出来的一个个印迹，都是真实的存在，让我感觉到了名为活着的感觉。于是，我不再晚睡，我在变强变好，我知道的，所以可以甘心睡觉了。</p>
-<p>但其实，我是不完美的，不该因为玩游戏看小说而觉得罪恶，也不该因为学习和健身而觉得欢喜，我只是，在做自己想做的，真正想要的，是发自内心的真实不虚的安宁啊。若是不能在想上进的时候上进，想堕落的时候堕落，而是只能被一条莫名的绳子扣着脖颈，牵引着前往那终究泯灭的未来，那么我，此生何必？</p>
+        <p>本篇主要记录一下我对界面优化、时间优化和耗电优化、安装包瘦身上的一些探索。我尽量按照自己的理解来进行描述，如有不当，欢迎指正。</p>
+<h2 id="一、界面优化"><a href="#一、界面优化" class="headerlink" title="一、界面优化"></a>一、界面优化</h2><h3 id="1、卡顿原理"><a href="#1、卡顿原理" class="headerlink" title="1、卡顿原理"></a>1、卡顿原理</h3><p>要了解卡顿原理，需要对帧缓冲区、垂直同步、CPU 和 GPU 几个词进行一下了解，然后综合起来，就可以得到卡顿的答案。</p>
+<h4 id="1-1、帧缓冲区"><a href="#1-1、帧缓冲区" class="headerlink" title="1.1、帧缓冲区"></a>1.1、帧缓冲区</h4><p>听起来很高大上，其实就是用来存放每一帧画面数据的一个 “仓库”，一个仓库只存放一帧画面的数据，iOS 一直是双缓存，就是有两个仓库，存当前帧数据的叫 “正式仓库”，存下一帧数据的叫 “预备仓库”。</p>
+<p>当正式仓库的数据被取走后，两者身份交换，原来的预备仓库转正为正式仓库，原来的正式仓库变成预备仓库。</p>
+<h4 id="1-2、垂直同步-VSync"><a href="#1-2、垂直同步-VSync" class="headerlink" title="1.2、垂直同步 (VSync)"></a>1.2、垂直同步 (VSync)</h4><p>就是一个“信号”，通知 APP 该开始准备往预备仓库里存放数据了，系统过一会就要来取，这个时间大概是 16.7 毫秒。</p>
+<h4 id="1-3、CPU-中央处理器"><a href="#1-3、CPU-中央处理器" class="headerlink" title="1.3、CPU (中央处理器)"></a>1.3、CPU (中央处理器)</h4><p>主要的工作有：正式对象的创建和销毁、对象属性的调整、布局计算、文本的计算和排版、图片的格式转换和解码、图像的绘制。我们可以理解为负责包裹内部的处理工作，简称 “打包”。</p>
+<h4 id="1-4、GPU-图形处理器"><a href="#1-4、GPU-图形处理器" class="headerlink" title="1.4、GPU (图形处理器)"></a>1.4、GPU (图形处理器)</h4><p>主要的工作有：将 CPU 计算好的内容进行变换、合成、渲染等处理，然后将渲染结果提交到帧缓冲区。我们可以理解为，对 CPU 给过来的包裹进行分类、排列等操作后，存放到仓库里去，简称 “入库”。</p>
+<h4 id="1-5、卡顿原理"><a href="#1-5、卡顿原理" class="headerlink" title="1.5、卡顿原理"></a>1.5、卡顿原理</h4><p>当收到系统发过来的 VSync “信号”后，CPU 就开始对这一帧画面的数据进行 “打包”，然后交给 GPU 进行 “入库” 操作，存入到 “预备仓库” 中。</p>
+<p>16.7 毫秒后，预备仓库转正，系统开始读取仓库里的数据，如果这个时候，仓库中的数据还没有准备好，那么系统就会大发雷霆，放弃读取仓库中的数据。</p>
+<p>那么这个时候，因为系统的宁缺毋滥，导致了显示器上显示的还是上一帧画面，就造成了卡顿的效果。</p>
+<h3 id="2、优化"><a href="#2、优化" class="headerlink" title="2、优化"></a>2、优化</h3><p>作为软件开发工程师的我们，既不能延长 16.7 毫秒的处理时间，也不能改变系统的脾气，那我们能做的就是尽量在这个时间内完成数据的准备。要么 “打包” 快一点，要么 “入库” 快一点，也就是针对 CPU 和 GPU 的工作进行优化，这就是性能优化的工作了。</p>
+<h4 id="2-1、CPU-工作之正式对象的创建和销毁"><a href="#2-1、CPU-工作之正式对象的创建和销毁" class="headerlink" title="2.1、CPU 工作之正式对象的创建和销毁"></a>2.1、CPU 工作之正式对象的创建和销毁</h4><ul>
+<li><p>UITableViewCell 和 UICollectionViewCell 的复用，可以减少 cell 的创建操作；</p>
+</li>
+<li><p>尽量使用轻量级的对象，可以减少对象的创建时间，比如在不需要事件处理的场景里，使用CALayer 比 UIView 会更加合适；</p>
+</li>
+<li><p>表情键盘使用 UICollectionViewCell 代替 UIButton，可以减少对象的创建操作；</p>
+</li>
+<li><p>对象不涉及UI操作，放到后台线程创建；</p>
+</li>
+<li><p>性能敏感的界面，storyborad 的资源消耗&gt;代码创建；</p>
+</li>
+<li><p>推迟对象创建的时间，对象放到多个任务中，比如懒加载；</p>
+</li>
+</ul>
+<h4 id="2-2、CPU-工作之对象属性的调整"><a href="#2-2、CPU-工作之对象属性的调整" class="headerlink" title="2.2、CPU 工作之对象属性的调整"></a>2.2、CPU 工作之对象属性的调整</h4><ul>
+<li>UIView 有一个 CALyer 的属性，UIView 负责事件的处理，CALyer 负责图层的绘制和显示。需要注意的是，CALyer本身是没有属性的，所以当改变 UIView 的显示相关的属性如 frame、bounds 和 transform 的时候，会消耗较多的资源，所以减少对这些属性的一些不必要修改，能减小 CPU 的压力；</li>
+</ul>
+<h4 id="2-3、CPU-工作之布局计算"><a href="#2-3、CPU-工作之布局计算" class="headerlink" title="2.3、CPU 工作之布局计算"></a>2.3、CPU 工作之布局计算</h4><ul>
+<li><p>UITableViewCell 高度提前计算并存储，要用的时候直接读取；</p>
+</li>
+<li><p>frame 计算好，减少不必要的修改；</p>
+</li>
+<li><p>Autolayout 会比直接设置 frame 消耗更多的 CPU 资源；</p>
+</li>
+</ul>
+<h4 id="2-4、CPU-工作之文本的计算和排版"><a href="#2-4、CPU-工作之文本的计算和排版" class="headerlink" title="2.4、CPU 工作之文本的计算和排版"></a>2.4、CPU 工作之文本的计算和排版</h4><ul>
+<li><p>普通文本可以在子线程用 [NSAttributedString boundingRectWithSize:options:context:] 来计算文本宽高，用 -[NSAttributedString drawWithRect:options:context:] 来绘制文本；</p>
+</li>
+<li><p>CoreText 对象占用内存较少，当显示大量文本时，可以用 CoreText 对文本异步绘制；</p>
+</li>
+</ul>
+<h4 id="2-5、CPU-工作之图片的格式转换和解码"><a href="#2-5、CPU-工作之图片的格式转换和解码" class="headerlink" title="2.5、CPU 工作之图片的格式转换和解码"></a>2.5、CPU 工作之图片的格式转换和解码</h4><ul>
+<li>在后台线程先把图片绘制到 CGBitmapContext 中，然后从 Bitmap 直接创建图片；</li>
+</ul>
+<h4 id="2-6、CPU-工作之图像的绘制"><a href="#2-6、CPU-工作之图像的绘制" class="headerlink" title="2.6、CPU 工作之图像的绘制"></a>2.6、CPU 工作之图像的绘制</h4><ul>
+<li><p>UITableViewCell 滑动减速的时候才加载图片，可以参考这个<a href="https://github.com/johnil/VVeboTableViewDemo" target="_blank" rel="noopener">demo</a>；</p>
+</li>
+<li><p>加载图片时，imageNamed 方法默认加载图片成功后会内存中缓存图片，下次读取会很快；imageWithContentsOfFile 方法不会缓存图片，大图片可以使用该方法；</p>
+</li>
+</ul>
+<h4 id="2-7、GPU-工作之渲染"><a href="#2-7、GPU-工作之渲染" class="headerlink" title="2.7、GPU 工作之渲染"></a>2.7、GPU 工作之渲染</h4><ul>
+<li><p>尽量不要让图片和视图的大小超过 GPU 纹理尺寸上限：4096 × 4096，不然图片还需要经过 CPU 的处理；</p>
+</li>
+<li><p>尽量减少视图数量和层次，并设置视图为不透明，UIView 的不透明属性 (opaque) 默认为 YES，一般设置背景颜色即可；CALayer 的不透明属性 (opaque) 默认为 NO，需要设置为 YES；</p>
+</li>
+<li><p>CALayer 的 border、圆角、阴影、遮罩，通常会触发离屏渲染，尽量少用，圆角属性可以使用 CoreGraphics 绘制或使用圆角图片代替，关于离屏渲染的知识，具体可以参考这篇文章：<a href="http://www.cocoachina.com/cms/wap.php?action=article&id=25543" target="_blank" rel="noopener">iOS 图形性能优化</a>;</p>
+</li>
+<li><p>图片的 size 最好刚好跟 UIImageView 的 size 保持一致，这涉及到像素对齐的知识，也可以在上面这篇文章中详细了解；</p>
+</li>
+</ul>
+<h2 id="二、时间优化"><a href="#二、时间优化" class="headerlink" title="二、时间优化"></a>二、时间优化</h2><p>要谈论时间优化，就要先了解程序启动的过程和耗时的原因，然后针对性的进行优化。</p>
+<h3 id="1、程序启动过程"><a href="#1、程序启动过程" class="headerlink" title="1、程序启动过程"></a>1、程序启动过程</h3><p>程序的启动分为冷启动和热启动两种模式，其中冷启动是从程序被杀死后加载起来的过程，热启动是从后台到前台的过程。相比之下，热启动是包含在冷启动里，并且比冷启动少了部分加载过程的，所以，我们平常说的启动优化，一般都是针对冷启动的。</p>
+<p>从点击程序的图标，到首页渲染完成显示到用户眼前，主要有三个阶段。</p>
+<h4 id="1-1、阶段一：main-函数之前"><a href="#1-1、阶段一：main-函数之前" class="headerlink" title="1.1、阶段一：main 函数之前"></a>1.1、阶段一：main 函数之前</h4><p>该阶段主要进行动态链接库 (dylib) 和自身 App 可执行文件的加载。</p>
+<p>其中动态链接库包括：iOS 中用到的所有系统 framework，加载 OC runtime 方法的 libobjc，系统级别的 libSystem，例如 libdispatch(GCD) 和 libsystem_blocks (Block)。</p>
+<h4 id="1-2、阶段二：main-函数到首页加载之前"><a href="#1-2、阶段二：main-函数到首页加载之前" class="headerlink" title="1.2、阶段二：main 函数到首页加载之前"></a>1.2、阶段二：main 函数到首页加载之前</h4><p>该阶段主要执行 main 函数到 applicationWillFinishLaunching 方法结束。</p>
+<h4 id="1-3、阶段三：首页开始加载到渲染完成"><a href="#1-3、阶段三：首页开始加载到渲染完成" class="headerlink" title="1.3、阶段三：首页开始加载到渲染完成"></a>1.3、阶段三：首页开始加载到渲染完成</h4><p>该阶段主要执行首页界面 viewDidLoad 方法和 UITabBarController 第一个子控制器 viewWillAppear 里的代码。</p>
+<h3 id="2、耗时产生原因"><a href="#2、耗时产生原因" class="headerlink" title="2、耗时产生原因"></a>2、耗时产生原因</h3><h4 id="2-1、阶段一里可能产生耗时的有："><a href="#2-1、阶段一里可能产生耗时的有：" class="headerlink" title="2.1、阶段一里可能产生耗时的有："></a>2.1、阶段一里可能产生耗时的有：</h4><ul>
+<li><p>加载大量动态链接库；</p>
+</li>
+<li><p>注册大量 Objc 类 、初始化类对象 (Objc 的 +load 方法)；</p>
+</li>
+<li><p>加载大量分类里的方法；</p>
+</li>
+<li><p>加载大量 C++ 静态对象；</p>
+</li>
+<li><p>执行大量声明为 <strong>attribute</strong>((constructor)) 的C函数。</p>
+</li>
+</ul>
+<h4 id="2-2、阶段二里可能产生耗时的有："><a href="#2-2、阶段二里可能产生耗时的有：" class="headerlink" title="2.2、阶段二里可能产生耗时的有："></a>2.2、阶段二里可能产生耗时的有：</h4><ul>
+<li><p>在 applicationWillFinishLaunching 执行了 UITabBarController 以及 子控制器的创建，并在 viewDidLoad 方法里执行了大量的耗时操作；</p>
+</li>
+<li><p>大量第三方应用的配置和启动项的累积；</p>
+</li>
+</ul>
+<h3 id="2-3、阶段三里可能产生耗时的有："><a href="#2-3、阶段三里可能产生耗时的有：" class="headerlink" title="2.3、阶段三里可能产生耗时的有："></a>2.3、阶段三里可能产生耗时的有：</h3><ul>
+<li>在 UITabBarController 第一个子控制器的 viewWillAppear 方法里执行了大量的耗时操作；</li>
+</ul>
+<h3 id="3、启动时间优化"><a href="#3、启动时间优化" class="headerlink" title="3、启动时间优化"></a>3、启动时间优化</h3><h4 id="3-1、针对阶段一的优化："><a href="#3-1、针对阶段一的优化：" class="headerlink" title="3.1、针对阶段一的优化："></a>3.1、针对阶段一的优化：</h4><ul>
+<li><p>减少非系统库的依赖、合并非系统库，苹果最多支持6个非系统的动态库合并为一个；</p>
+</li>
+<li><p>定期清理项目里不使用的类和方法，检测工具可以使用AppCode，关于AppCode的使用请参考这篇文章: <a href="https://www.jianshu.com/p/6be7dc65d67e" target="_blank" rel="noopener">AppCode使用介绍</a>；</p>
+</li>
+<li><p>将不必须在 +load 方法中做的事情延迟到 +initialize 中，关于二者的区别可以参考<a href="https://ityongzhen.github.io/iOS中load和initialize.html" target="_blank" rel="noopener">这篇文章</a>；</p>
+</li>
+<li><p>减少分类和分类里方法的数量；</p>
+</li>
+<li><p>尽量不要用 C++ 虚函数；</p>
+</li>
+<li><p>删减一些无用的静态变量。</p>
+</li>
+</ul>
+<h4 id="3-2、针对阶段二的优化："><a href="#3-2、针对阶段二的优化：" class="headerlink" title="3.2、针对阶段二的优化："></a>3.2、针对阶段二的优化：</h4><ul>
+<li><p>对启动项和第三方应用配置根据优先级区分，部分不需要在程序启动就初始化的配置，进行延后处理；</p>
+</li>
+<li><p>减少在 viewDidLoad 里的耗时处理；</p>
+</li>
+</ul>
+<h4 id="3-3、针对阶段三的优化："><a href="#3-3、针对阶段三的优化：" class="headerlink" title="3.3、针对阶段三的优化："></a>3.3、针对阶段三的优化：</h4><ul>
+<li><p>UITabBarController 第一个子控制器里的一些耗时操作可以放到 viewDidAppear 方法中，先把界面加载出来，然后再拿到数据刷新界面；</p>
+</li>
+<li><p>增加广告页，在这个时间内准备好首屏页面和数据；</p>
+</li>
+</ul>
+<h3 id="4、耗时检测工具"><a href="#4、耗时检测工具" class="headerlink" title="4、耗时检测工具"></a>4、耗时检测工具</h3><ul>
+<li><p>Xcode自带的 Time Profiler，具体操作可以参考<a href="https://blog.csdn.net/lichuandev/article/details/79636363" target="_blank" rel="noopener">这篇文章</a>；</p>
+</li>
+<li><p>查询main函数之前的耗时：菜单：Product-&gt;Scheme-&gt;Edit Scheme-&gt;Environment Variables，设置：key:DYLD_PRINT_STATISTICS ，value:1。</p>
+</li>
+</ul>
+<h2 id="三、耗电优化"><a href="#三、耗电优化" class="headerlink" title="三、耗电优化"></a>三、耗电优化</h2><p>要研究耗电优化，就要先明白耗电产生的原因，然后针对性的做出一些优化。根据耗电的原因和可优化类型，可以分为 CPU 和 GPU 操作优化、网络优化、定位优化、动作传感器优化和蓝牙优化五大类。</p>
+<h3 id="1、CPU-和-GPU-操作优化"><a href="#1、CPU-和-GPU-操作优化" class="headerlink" title="1、CPU 和 GPU 操作优化"></a>1、CPU 和 GPU 操作优化</h3><p>CPU 和 GPU 消耗是所有开发者绕不开的难关，良好的开发习惯，能让我们减少很多能耗，这里可以将前面介绍的界面优化结合起来，除此之外，有几个地方可以进行优化：</p>
+<ul>
+<li><p>少用定时器，每次用的时候都仔细思考下：首先，能不能用其他方式代替，比如定时刷新数据改为触发式刷新，还有<a href="https://www.jianshu.com/p/ccde42d839b8" target="_blank" rel="noopener">dispatch source代替定时器监测文件变化</a>；如果不能代替，那么注意的是要设置一个合适的超时时间，以及在不再需要时及时关闭重复性定时器。</p>
+</li>
+<li><p>文件的读写操作很耗电，我们要尽量减小读写操作的频率，思路有：<br>小数据和小改动最好批量一次性写入；使用 SQLite 或 Core Data 存储大量的数据；</p>
+</li>
+</ul>
+<h3 id="2、网络优化"><a href="#2、网络优化" class="headerlink" title="2、网络优化"></a>2、网络优化</h3><ul>
+<li><p>使用断点续传，否则网络不稳定时可能多次传输相同的内容</p>
+</li>
+<li><p>减少、压缩网络数据</p>
+</li>
+<li><p>让用户可以取消长时间运行或者速度很慢的网络操作，设置合适的超时时间</p>
+</li>
+<li><p>网络不可用时，不要尝试执行网络请求</p>
+</li>
+<li><p>批量传输，比如，下载视频流时，不要传输很小的数据包，直接下载整个文件或者一大块一大块地下载。如果下载广告，一 次性多下载一些，然后再慢慢展示。如果下载电子邮件，一次下载多封，不要一封一封地下载</p>
+</li>
+</ul>
+<h3 id="3、定位优化"><a href="#3、定位优化" class="headerlink" title="3、定位优化"></a>3、定位优化</h3><ul>
+<li><p>很多 APP 为了记录用户的活动或者提供基于位置的服务会进行定位。定位精度越高，定位时间越长，消耗电量也就越多。所以 APP 应该尽量降低定位精度、缩短定位时间。不需要位置信息之后立即停止定位。</p>
+</li>
+<li><p>如果只是需要快速确定用户位置，最好用 CLLocationManager的requestLocation 方法。定位完成后，会自动让定位硬件断电</p>
+</li>
+<li><p>如果不是导航应用，尽量不要实时更新位置，定位完毕就关掉定位服务</p>
+</li>
+<li><p>尽量降低定位精度，比如尽量不要使用精度最高的 kCLLocationAccuracyBest</p>
+</li>
+<li><p>需要后台定位时，尽量设置 pausesLocationUpdatesAutomatically 为 YES，如果用户不太可能移动的时候系统会自动暂停位置更新</p>
+</li>
+<li><p>尽量不要使用 startMonitoringSignificantLocationChanges，优先考虑 startMonitoringForRegion</p>
+</li>
+</ul>
+<h3 id="3、动作传感器优化"><a href="#3、动作传感器优化" class="headerlink" title="3、动作传感器优化"></a>3、动作传感器优化</h3><ul>
+<li><p>用户移动、摇晃、倾斜设备时，会产生动作(motion)事件，这些事件由加速度计、陀螺仪、磁力计等硬件检测。在不需要检测的场合，应该及时关闭这些硬件</p>
+</li>
+<li><p>长时间用不上加速度计、陀螺仪、磁力计等设备的动作数据时，应该停止更新数据，不然也会浪费电能。应按需获取，用完即停。</p>
+</li>
+</ul>
+<h3 id="4、蓝牙优化"><a href="#4、蓝牙优化" class="headerlink" title="4、蓝牙优化"></a>4、蓝牙优化</h3><ul>
+<li><p>没有必要的时候不要扫描蓝牙外设。</p>
+</li>
+<li><p>扫描外设时一般不要用 CBCentralManagerScanOptionAllowDuplicatesKey。</p>
+</li>
+<li><p>只查找你需要的外设服务。外设可能提供很多服务和特性(characteristic)，查找外设的时候可以指定 UUID。</p>
+</li>
+<li><p>不要轮询设备特性值，用通知监测特征值的变化。</p>
+</li>
+<li><p>特性值不再提供通知或者不再需要通信的时候就断开连接。</p>
+</li>
+</ul>
+<h3 id="5、耗电检测"><a href="#5、耗电检测" class="headerlink" title="5、耗电检测"></a>5、耗电检测</h3><ul>
+<li><p>在Xcode中选择View &gt; Navigators &gt; Show Debug Navigator，这里提供了很多仪表用于分析功耗。Energy impact可以查看正在运行的app的功耗</p>
+</li>
+<li><p>启动 Instruments，选择你的设备和要检测的 APP，打开 Energy Log 进行检测</p>
+</li>
+<li><p>设备上进入设置 &gt; 开发者 &gt; Logging &gt; 开启功耗记录。注意：如果手机里没有开发者选项请看<a href="https://www.jianshu.com/p/a1d075b3472c" target="_blank" rel="noopener">这里</a></p>
+</li>
+</ul>
+<h2 id="四、安装包瘦身"><a href="#四、安装包瘦身" class="headerlink" title="四、安装包瘦身"></a>四、安装包瘦身</h2><p>安装包的大小受资源文件和可执行文件影响，所以针对性的优化也是这两方面。</p>
+<h3 id="1、资源文件优化"><a href="#1、资源文件优化" class="headerlink" title="1、资源文件优化"></a>1、资源文件优化</h3><ul>
+<li><p>在项目中引入图片时候，直接在 Assets.xcassets 中添加就可以，这样能使用到 App Slicing 功能，这样当用户从 App Store上下载 App 时，可以只下载适用于其设备的 App 架构版本和所需资源，从而减少App所占的空间，且现在基本没有 1x 屏幕的设备了，所以可以不用提供这个分辨率的图片。</p>
+</li>
+<li><p>使用 <a href="https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2Ftinymind%2FLSUnusedResources%2F" target="_blank" rel="noopener">LSUnusedResources</a> 查找无用图片</p>
+</li>
+<li><p>使用 <a href="https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Ftinypng.com%2F" target="_blank" rel="noopener">TinyPNG</a>有 损压缩图片</p>
+</li>
+<li><p>启动图片一般较大，可以用 LaunchScreen.storyboard 替换</p>
+</li>
+<li><p>音频文件、视频文件和 H5 远端化</p>
+</li>
+</ul>
+<h3 id="2、可执行文件优化"><a href="#2、可执行文件优化" class="headerlink" title="2、可执行文件优化"></a>2、可执行文件优化</h3><ul>
+<li><p>清理无用代码–<a href="https://www.jetbrains.com/objc/" target="_blank" rel="noopener">AppCode</a>，用它的 inspect code 来扫描无用代码，包括无用的类、函数、宏定义、value、属性等</p>
+</li>
+<li><p>去掉异常支持，Enable C++ Exceptions、Enable Objective-C Exceptions 设置为 NO， Other C Flags 添加 -fno-exceptions</p>
+</li>
+<li><p>在 release 状态下，Strip Debug Symbols During Copy、Strip Linked Product、Make String Read-Only、Dead Code Stripping、Deployment PostProcessing、Symbols hidden by default 设为Y ES，Optimization Level 设置为 Fastest、Smallest</p>
+</li>
+<li><p>OC项目中使用 Swift，会增加安装包大小，因为 FrameWork 中会加入为了支持 Swift 的动态库集合，如果纯 Swift 项目，不会引入这些东西。</p>
+</li>
+<li><p>删除不使用的三方库，功能用的少但是体积大的三方库可以考虑自己重写，合并功能重复的三方库</p>
+</li>
+</ul>
+<p>最后郑重声明，本篇里只是记录一下我的个人总结，资料大量参考了以下文章:</p>
+<p><a href="https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/" target="_blank" rel="noopener">iOS 保持界面流畅的技巧</a></p>
+<p><a href="https://techblog.toutiao.com/2017/01/17/iosspeed/#more" target="_blank" rel="noopener">今日头条iOS客户端启动速度优化</a>;</p>
+<p><a href="https://mp.weixin.qq.com/s/Kf3EbDIUuf0aWVT-UCEmbA" target="_blank" rel="noopener">iOS App 启动性能优化</a>;</p>
+<p><a href="https://mp.weixin.qq.com/s/jN3jaNrvXczZoYIRCWZs7w" target="_blank" rel="noopener">iOS App冷启动治理：来自美团外卖的实践</a>;</p>
+<p><a href="https://zhuanlan.zhihu.com/p/38183046?from=1086193010&wm=3333_2001&weiboauthoruid=1690182120" target="_blank" rel="noopener">iOS app启动速度研究实践</a>;</p>
+<p><a href="http://www.cocoachina.com/articles/21428" target="_blank" rel="noopener">iOS进阶–App功耗优化看这篇就够了</a>；</p>
+<p><a href="https://www.jianshu.com/p/49cecc06e99f" target="_blank" rel="noopener">iOS的性能优化</a>；</p>
+<p><a href="https://www.codercto.com/a/69108.html" target="_blank" rel="noopener">iOS安装包瘦身小记</a>；</p>
+<p><a href="https://yq.aliyun.com/articles/226555?utm_content=m_33409" target="_blank" rel="noopener">iOS App 安装包瘦身指南</a></p>
 
       
 
@@ -188,7 +398,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">开发</a>
         		</li>
       		
 		</ul>
@@ -207,18 +417,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%20app%20%E7%9A%84%E4%B8%80%E5%A4%A9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iOS开发系列之 app 的一天
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS开发系列之内存泄漏分析（下）</div>
+    <a href="/2019/12/09/2019%E5%B9%B412%E6%9C%88%E4%BB%BD%E7%AC%AC%E4%B8%80%E5%91%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2019年12月份第一周</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -245,7 +446,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、界面优化"><span class="toc-number">1.</span> <span class="toc-text">一、界面优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、卡顿原理"><span class="toc-number">1.1.</span> <span class="toc-text">1、卡顿原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1、帧缓冲区"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1、帧缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2、垂直同步-VSync"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2、垂直同步 (VSync)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3、CPU-中央处理器"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3、CPU (中央处理器)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4、GPU-图形处理器"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4、GPU (图形处理器)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5、卡顿原理"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5、卡顿原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、优化"><span class="toc-number">1.2.</span> <span class="toc-text">2、优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1、CPU-工作之正式对象的创建和销毁"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1、CPU 工作之正式对象的创建和销毁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2、CPU-工作之对象属性的调整"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2、CPU 工作之对象属性的调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3、CPU-工作之布局计算"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3、CPU 工作之布局计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4、CPU-工作之文本的计算和排版"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4、CPU 工作之文本的计算和排版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5、CPU-工作之图片的格式转换和解码"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5、CPU 工作之图片的格式转换和解码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6、CPU-工作之图像的绘制"><span class="toc-number">1.2.6.</span> <span class="toc-text">2.6、CPU 工作之图像的绘制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7、GPU-工作之渲染"><span class="toc-number">1.2.7.</span> <span class="toc-text">2.7、GPU 工作之渲染</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、时间优化"><span class="toc-number">2.</span> <span class="toc-text">二、时间优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、程序启动过程"><span class="toc-number">2.1.</span> <span class="toc-text">1、程序启动过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1、阶段一：main-函数之前"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1、阶段一：main 函数之前</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2、阶段二：main-函数到首页加载之前"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2、阶段二：main 函数到首页加载之前</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3、阶段三：首页开始加载到渲染完成"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3、阶段三：首页开始加载到渲染完成</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、耗时产生原因"><span class="toc-number">2.2.</span> <span class="toc-text">2、耗时产生原因</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1、阶段一里可能产生耗时的有："><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1、阶段一里可能产生耗时的有：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2、阶段二里可能产生耗时的有："><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2、阶段二里可能产生耗时的有：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3、阶段三里可能产生耗时的有："><span class="toc-number">2.3.</span> <span class="toc-text">2.3、阶段三里可能产生耗时的有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、启动时间优化"><span class="toc-number">2.4.</span> <span class="toc-text">3、启动时间优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1、针对阶段一的优化："><span class="toc-number">2.4.1.</span> <span class="toc-text">3.1、针对阶段一的优化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2、针对阶段二的优化："><span class="toc-number">2.4.2.</span> <span class="toc-text">3.2、针对阶段二的优化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3、针对阶段三的优化："><span class="toc-number">2.4.3.</span> <span class="toc-text">3.3、针对阶段三的优化：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、耗时检测工具"><span class="toc-number">2.5.</span> <span class="toc-text">4、耗时检测工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、耗电优化"><span class="toc-number">3.</span> <span class="toc-text">三、耗电优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、CPU-和-GPU-操作优化"><span class="toc-number">3.1.</span> <span class="toc-text">1、CPU 和 GPU 操作优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、网络优化"><span class="toc-number">3.2.</span> <span class="toc-text">2、网络优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、定位优化"><span class="toc-number">3.3.</span> <span class="toc-text">3、定位优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、动作传感器优化"><span class="toc-number">3.4.</span> <span class="toc-text">3、动作传感器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、蓝牙优化"><span class="toc-number">3.5.</span> <span class="toc-text">4、蓝牙优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、耗电检测"><span class="toc-number">3.6.</span> <span class="toc-text">5、耗电检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、安装包瘦身"><span class="toc-number">4.</span> <span class="toc-text">四、安装包瘦身</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、资源文件优化"><span class="toc-number">4.1.</span> <span class="toc-text">1、资源文件优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、可执行文件优化"><span class="toc-number">4.2.</span> <span class="toc-text">2、可执行文件优化</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
