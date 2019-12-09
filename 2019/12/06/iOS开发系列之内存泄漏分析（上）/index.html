@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="清净小筑">
 <meta property="og:description" content="iOS自从引入ARC机制后，一般的内存管理就可以不用我们码农来负责了，但是一些操作如果不注意，还是会引起内存泄漏。 本文主要介绍一下内存泄漏的原理、常规的检测方法以及出现的常用场景和修改方法。">
 <meta property="og:locale" content="ch">
-<meta property="og:updated_time" content="2019-12-06T09:58:19.448Z">
+<meta property="og:updated_time" content="2019-12-06T09:59:46.874Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="清净小筑" type="application/atom+xml">
@@ -58,7 +58,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">技术</a></li>
+				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E5%BC%80%E5%8F%91/">开发</a></li>
 	        
@@ -128,7 +128,7 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">技术</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
 					<li style="width: 25%"><a href="/tags/%E5%BC%80%E5%8F%91/">开发</a></li>
 		        
@@ -189,7 +189,7 @@
 <p>需要注意的是：只有当CGImageRef使用create或retain后才要手动release，没有就不需要手动处理了，系统会进行自动的释放。上面的imageRef对象就是这样，如果进行了手动release，会引起不确定性的崩溃。</p>
 <p>为什么是不确定性的崩溃呢，目前我支持的一种说法是：CFRelease的对象不能是NULL，若是NULL的话，会引起runtime的错误并且程序要崩溃，本来imageRef的管理者是会在某个时刻调用release的，但是因为这里已经release过了，已经成了NULL，所以当这个调用时期到来的时候就crash掉了。</p>
 <p>关于这个问题，大家可以使用我的demo进行尝试，打开后图中注释的代码后运行，先进入内存泄漏的页面，然后返回上级，再进入这个页面，程序崩溃，demo地址见底部。</p>
-<h4 id="3-3、-CoreFoundation框架里申请的内存忘记释放"><a href="#3-3、-CoreFoundation框架里申请的内存忘记释放" class="headerlink" title="3.3、 CoreFoundation框架里申请的内存忘记释放"></a>3.3、 CoreFoundation框架里申请的内存忘记释放</h4><p>请看下面这段代码：</p>
+<h4 id="3-3、CoreFoundation框架里申请的内存忘记释放"><a href="#3-3、CoreFoundation框架里申请的内存忘记释放" class="headerlink" title="3.3、CoreFoundation框架里申请的内存忘记释放"></a>3.3、CoreFoundation框架里申请的内存忘记释放</h4><p>请看下面这段代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">- (NSString *)coreFoundationMemoryLeak&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    CFUUIDRef uuid_ref &#x3D; CFUUIDCreate(NULL);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    CFStringRef uuid_string_ref&#x3D; CFUUIDCreateString(NULL, uuid_ref);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;    NSString *uuid &#x3D; (__bridge NSString *)uuid_string_ref;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    NSString *uuid &#x3D; (__bridge_transfer NSString *)uuid_string_ref;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    CFRelease(uuid_ref);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;    CFRelease(uuid_string_ref);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    return uuid;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
 <p>如果”CFRelease(uuid_ref)”这行代码缺失，就会引起内存泄漏，使用静态分析可以轻易发现。</p>
@@ -278,7 +278,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-内存泄漏原理"><span class="toc-number">1.</span> <span class="toc-text">1、 内存泄漏原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-常规的检测方法"><span class="toc-number">2.</span> <span class="toc-text">2、 常规的检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1、Analyze静态分析-（command-＋-shift-＋-b）。"><span class="toc-number">2.1.</span> <span class="toc-text">2.1、Analyze静态分析 （command ＋ shift ＋ b）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2、动态分析方法（Instrument工具库里的Leaks），product－-gt-profile-－-gt-leaks-打开可以工具主窗口，具体使用方法可以参考这篇文章。"><span class="toc-number">2.2.</span> <span class="toc-text">2.2、动态分析方法（Instrument工具库里的Leaks），product－&gt;profile －&gt;leaks 打开可以工具主窗口，具体使用方法可以参考这篇文章。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-内存泄漏的场景和分析："><span class="toc-number">3.</span> <span class="toc-text">3、 内存泄漏的场景和分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1、代理的属性关键字设置为strong造成的内存泄漏"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、代理的属性关键字设置为strong造成的内存泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2、CoreGraphics框架里申请的内存忘记释放"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、CoreGraphics框架里申请的内存忘记释放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3、-CoreFoundation框架里申请的内存忘记释放"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、 CoreFoundation框架里申请的内存忘记释放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4、NSTimer-不正确使用造成的内存泄漏"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、NSTimer 不正确使用造成的内存泄漏</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-内存泄漏原理"><span class="toc-number">1.</span> <span class="toc-text">1、 内存泄漏原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-常规的检测方法"><span class="toc-number">2.</span> <span class="toc-text">2、 常规的检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1、Analyze静态分析-（command-＋-shift-＋-b）。"><span class="toc-number">2.1.</span> <span class="toc-text">2.1、Analyze静态分析 （command ＋ shift ＋ b）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2、动态分析方法（Instrument工具库里的Leaks），product－-gt-profile-－-gt-leaks-打开可以工具主窗口，具体使用方法可以参考这篇文章。"><span class="toc-number">2.2.</span> <span class="toc-text">2.2、动态分析方法（Instrument工具库里的Leaks），product－&gt;profile －&gt;leaks 打开可以工具主窗口，具体使用方法可以参考这篇文章。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-内存泄漏的场景和分析："><span class="toc-number">3.</span> <span class="toc-text">3、 内存泄漏的场景和分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1、代理的属性关键字设置为strong造成的内存泄漏"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、代理的属性关键字设置为strong造成的内存泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2、CoreGraphics框架里申请的内存忘记释放"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、CoreGraphics框架里申请的内存忘记释放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3、CoreFoundation框架里申请的内存忘记释放"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、CoreFoundation框架里申请的内存忘记释放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4、NSTimer-不正确使用造成的内存泄漏"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、NSTimer 不正确使用造成的内存泄漏</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
