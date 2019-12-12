@@ -19,7 +19,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-5fec4ff437cd3fe7.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-25347d04c8889436.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
-<meta property="og:updated_time" content="2019-12-12T03:32:24.616Z">
+<meta property="og:updated_time" content="2019-12-12T03:50:59.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
   
@@ -202,7 +202,7 @@
 <h3 id="6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，"><a href="#6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，" class="headerlink" title="6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，"></a>6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，</h3><p>当用户按下 home 键后，一般 10s 左右 app 就进入了挂起状态，挂起状态的 app 是没有任何活动的。特殊的比如播放音乐、使用定位相关服务、使用 voip（音视频点对点）服务，是可以向系统申请让 app 一直在后台运行的。所以有的公司是采用播放一个无声的音乐来让 app 保持活跃状态，需要注意的是，这种方法会导致上架被拒。</p>
 <h3 id="7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，"><a href="#7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，" class="headerlink" title="7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，"></a>7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，</h3><p>iOS 的离线推送原理是，由后台对接苹果服务器，app 每次启动后上传自己的设备 token 给后台，当发送需要推送的消息时，由后台找到对应的设备 token，用苹果规定的格式，将消息和 token 一起发给苹果负责推送的服务器 APNs，然后由苹果服务器找到该设备，在系统的层面展示这条推送消息。包括后台 JAVA 代码的全套流程专业解析请看<a href="https://www.cnblogs.com/taintain1984/p/3716642.html" target="_blank" rel="noopener">这里</a>。</p>
 <p>另外还有一种推送机制叫做 pushkit，pushkit 区别与普通 APNs 的地方是，它不会弹出通知，而是直接唤醒你的 app，进入回调，也就是说，可以在用户没点击 app 启动的情况下，就运行我们自己写的代码，这样的可操作性就大多了，但由于这种推送会在用户不知情的情况就启动 app，苹果的审核也较为严格。</p>
-<h3 id="8、杀掉进程，下班，主线程停止。"><a href="#8、杀掉进程，下班，主线程停止。" class="headerlink" title="8、杀掉进程，下班，主线程停止。"></a>8、杀掉进程，下班，主线程停止。</h3><p>做个小小的总结吧，目前缺失的有：<br>1、性能优化原理；<br>2、多线程相关详解；<br>3、内存管理附上生活中的类比；<br>4、https 加密贴上自己的理解；</p>
+<h3 id="8、杀掉进程，主线程停止，下班休息。"><a href="#8、杀掉进程，主线程停止，下班休息。" class="headerlink" title="8、杀掉进程，主线程停止，下班休息。"></a>8、杀掉进程，主线程停止，下班休息。</h3><p>其实还想加更多的东西进去，不过目前也没好的思路，欢迎评论。</p>
 
       
 
@@ -235,11 +235,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/09/2019%E5%B9%B412%E6%9C%88%E4%BB%BD%E7%AC%AC%E4%B8%80%E5%91%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iOS开发系列之内存泄漏分析（上）
+          2019年12月份第一周
         
       </div>
     </a>
@@ -273,7 +273,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、点击图标，开始上班，开启主线程，开始跑-runloop，"><span class="toc-number">1.</span> <span class="toc-text">1、点击图标，开始上班，开启主线程，开始跑 runloop，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、主线程开始绘制-UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面"><span class="toc-number">2.</span> <span class="toc-text">2、主线程开始绘制 UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、接收到用户输入、点击、滑动等操作，开始处理，"><span class="toc-number">3.</span> <span class="toc-text">3、接收到用户输入、点击、滑动等操作，开始处理，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，"><span class="toc-number">4.</span> <span class="toc-text">4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存"><span class="toc-number">5.</span> <span class="toc-text">5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，"><span class="toc-number">6.</span> <span class="toc-text">6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，"><span class="toc-number">7.</span> <span class="toc-text">7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、杀掉进程，下班，主线程停止。"><span class="toc-number">8.</span> <span class="toc-text">8、杀掉进程，下班，主线程停止。</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、点击图标，开始上班，开启主线程，开始跑-runloop，"><span class="toc-number">1.</span> <span class="toc-text">1、点击图标，开始上班，开启主线程，开始跑 runloop，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、主线程开始绘制-UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面"><span class="toc-number">2.</span> <span class="toc-text">2、主线程开始绘制 UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、接收到用户输入、点击、滑动等操作，开始处理，"><span class="toc-number">3.</span> <span class="toc-text">3、接收到用户输入、点击、滑动等操作，开始处理，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，"><span class="toc-number">4.</span> <span class="toc-text">4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存"><span class="toc-number">5.</span> <span class="toc-text">5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，"><span class="toc-number">6.</span> <span class="toc-text">6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，"><span class="toc-number">7.</span> <span class="toc-text">7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、杀掉进程，主线程停止，下班休息。"><span class="toc-number">8.</span> <span class="toc-text">8、杀掉进程，主线程停止，下班休息。</span></a></li></ol>
                     </div>
                 </span>
             </div>
