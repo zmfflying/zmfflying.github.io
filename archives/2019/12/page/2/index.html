@@ -6,22 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zmfflying.github.io">
-  <title>iOS开发系列之app的一天 | 清净小筑</title>
+  <title>Archives: 2019/12 | 清净小筑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。">
-<meta name="keywords" content="开发">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS开发系列之app的一天">
-<meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8Bapp%E7%9A%84%E4%B8%80%E5%A4%A9&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="清净小筑">
+<meta property="og:url" content="http:&#x2F;&#x2F;zmfflying.github.io&#x2F;archives&#x2F;2019&#x2F;12&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="清净小筑">
-<meta property="og:description" content="本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。">
 <meta property="og:locale" content="ch">
-<meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
-<meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-5fec4ff437cd3fe7.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
-<meta property="og:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-25347d04c8889436.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
-<meta property="og:updated_time" content="2019-12-12T03:50:59.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;upload-images.jianshu.io&#x2F;upload_images&#x2F;3288430-7ca2952ad7059140.png?imageMogr2&#x2F;auto-orient&#x2F;strip%7CimageView2&#x2F;2&#x2F;w&#x2F;1240">
   
     <link rel="alternative" href="/atom.xml" title="清净小筑" type="application/atom+xml">
   
@@ -153,145 +145,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS开发系列之app的一天" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      iOS开发系列之app的一天
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/06/%E9%86%92%E6%9D%A5%E7%BB%88%E8%A7%89%E6%98%AF%E5%B9%B3%E5%B8%B8/" class="archive-article-date">
+  	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/06/%E9%86%92%E6%9D%A5%E7%BB%88%E8%A7%89%E6%98%AF%E5%B9%B3%E5%B8%B8/">醒来终觉是平常</a>
     </h1>
   
 
-        
-        <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8Bapp%E7%9A%84%E4%B8%80%E5%A4%A9/" class="archive-article-date">
-  	<time datetime="2019-12-06T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文主要讲述我对 iOS 开发的一些理解，希望能通过 app 从启动到退出，将一些的知识整合起来，形成一条知识链，目前涉及到的知识点有 runloop、runtime、文件存储、界面布局、离线推送、内存管理、响应链、多线程。但大部分较为浅显，我尽量写自己的理解，专业性的代码尽量贴上链接，如有不当欢迎指正。</p>
-<a id="more"></a>
-
-<h3 id="1、点击图标，开始上班，开启主线程，开始跑-runloop，"><a href="#1、点击图标，开始上班，开启主线程，开始跑-runloop，" class="headerlink" title="1、点击图标，开始上班，开启主线程，开始跑 runloop，"></a>1、点击图标，开始上班，开启主线程，开始跑 runloop，</h3><p> 一个 app，启动之后为什么能一直存活并响应用户的操作，就是因为有一个主线程一直存活，并且主线程开启了一个 runloop。关于 runloop 可以粗略的理解为一个 do-while 的死循环，它一遍遍的执行着自己的任务，直到程序进程被杀死才停止。它承担了一个类似于小管家的角色，负责处理定时器的事件、监听用户的操作和处理系统的消息。</p>
-<p>更深入一点的理解是，其实 runloop 存在着内核态和用户态两种状态，当没有事件需要处理的时候，就切换为内核态，开始休眠，当接收到事件，就切换为用户态，结束休眠。这样可以避免一般的 while 循环导致的 cpu 忙等待，形成一种“闲”等待，减小 cpu 负担。</p>
-<p>runloop 的具体流程如下，需要注意的是：<br>1、Timers 代表定时器的事件<br>2、Source0 代表用户触摸事件、和PerformSelectors<br>3、Source1 代表锁屏/摇晃等系统事件</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3288430-7ca2952ad7059140.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="runloop"></p>
-<p>附上YYKit大神的博客地址：<a href="https://blog.ibireme.com/2015/05/18/runloop/" target="_blank" rel="noopener">https://blog.ibireme.com/2015/05/18/runloop/</a></p>
-<h3 id="2、主线程开始绘制-UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面"><a href="#2、主线程开始绘制-UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面" class="headerlink" title="2、主线程开始绘制 UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面"></a>2、主线程开始绘制 UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面</h3><p>这时候，一边开始绘制着欢迎页或者启动页的界面，一边去查询本地有没有存储着登录信息。注意，只能在主线程去绘制 UI，所以查询登录信息是在子线程，这样的好处的是，不阻塞主线程，减少用户的等待时间。</p>
-<p>关于多线程的技术，可以理解为一心多用，就像我们可以一边走路一边听歌，我们的大脑在处理走路相关的操作时，也能处理听歌相关的操作。</p>
-<p> iOS 里，每一个 app 都有一个自己的小家，我们称为沙盒机制。所有的小家初始样式都是一致的，但内部可以自行装修，增加各种目录结构。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3288430-5fec4ff437cd3fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="沙盒目录"></p>
-<p>需要注意的是，每个小家都是单独的，不能走访邻居家做客，即不能访问或修改其他 app 的数据，但可以通过分享的方式，在系统的公证下进行数据交流。部分系统级的资源是公用的，比如相册、摄像头、通讯录等，是类似阳光、空气一样的公用资源。</p>
-<p>关于沙盒机制的具体加密原理，大家可以去看下这篇文章<a href="https://blog.csdn.net/youshaoduo/article/details/66478551" target="_blank" rel="noopener">这篇文章</a>，嗯，我没看懂。</p>
-<p>iOS 里操作本地数据一般有几种方式，按照数据类型可以进行分类，常用的一些零碎信息用偏好设置，大批量的重复数据比如通讯录数据使用数据库，iOS 的数据库是 sqlite，文件类数据直接使用文件写入/读取就可以。</p>
-<p>界面绘制的话，是以左上角为坐标原点向右向下延伸的，一个正常的UI控件绘制，一般需要四个元素才能确定坐标，即 X 坐标（横向），Y 坐标（纵向），宽度，高度。也可以使用控件彼此依赖的约束，使用参照原则，原理就是根据设置参照条件获取坐标，比如，控件 A 的宽度等于屏幕宽，控件B的宽度等于控件 A 的宽度，那么就可以计算出控件 B 的宽度为屏幕宽。这种方案总的来说，在性能上是比不上直接设置坐标值，但在屏幕适配上占据很多优势，而且在自动计算控件高度上很轻松，减少了人工计算的步骤，也是目前主流的方案。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3288430-25347d04c8889436.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="坐标"></p>
-<h3 id="3、接收到用户输入、点击、滑动等操作，开始处理，"><a href="#3、接收到用户输入、点击、滑动等操作，开始处理，" class="headerlink" title="3、接收到用户输入、点击、滑动等操作，开始处理，"></a>3、接收到用户输入、点击、滑动等操作，开始处理，</h3><p>用户的这些操作，是 runloop 捕捉到的，然后根据响应链，一步步的寻找到响应的控件，执行对应的方法。所谓响应链，就是从屏幕开始，倒序遍历所有子控件，如果点击的坐标在该控件的范围内，就返回当前控件，并且继续遍历该控件的子控件，直到找到最小的那个子控件。</p>
-<p>这个控件，如果有对应的方法设置，比如点击方法、手势等，那就根据方法，去寻找方法的执行者，寻找的规则是这样，先在当前类的方法列表里寻找，没有就去父类的，再没有就去父类的父类，一直到基类，如果基类也没有，就进入消息转发的流程。</p>
-<p>这个消息转发流程的意思就是，系统对开发者说，我一层层的检查完了，都没有响应这个方法的对象，最后给你个机会，要么搞个方法来接替原来的方法，要么就给我个对象去响应这个方法。最后如果走完消息转发流程，还是没法处理，那就崩溃吧。专业的消息转发解析请看<a href="https://www.jianshu.com/p/9263720cbd91" target="_blank" rel="noopener">这里</a>。再深层次的到汇编的解析请看萧玉大神的<a href="http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/" target="_blank" rel="noopener">这篇文章</a>。</p>
-<h3 id="4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，"><a href="#4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，" class="headerlink" title="4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，"></a>4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，</h3><p>网络请求一般有 get 和 post 两种请求方式，一般 get 用于不穿参数的拉取数据，如果需要传参数给后台一般使用 post。原因是 get 传参数需要拼接在请求的链接后面，数据的安全得不到保障，而且参数的长度是有限制的，无法传递大量的信息。</p>
-<p>关于 http 和 https 大家可以去看<a href="https://juejin.im/post/5dd50eba6fb9a05a6313ebba" target="_blank" rel="noopener">这篇文章</a>。</p>
-<h3 id="5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存"><a href="#5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存" class="headerlink" title="5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存"></a>5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存</h3><p>iOS 中每个 OC对象，都会有一个 retainCount（引用计数）属性，当对象创建的时候，引用计数都是 1，当其他对象持有这个对象的时候，引用计数加 1，不再持有的时候减 1，对象不再使用的时候再减 1，如果引用计数变为 0，那么这个对象就会立即会被系统回收掉。</p>
-<p>后来系统提供了自动释放池的相关接口，原理就是在把对象加入到一个池子里，每次 runloop  将要结束的时候，系统会让这个池子里的所有对象引用计数减 1，如果减 1 后的引用计数为 0，那么就立即回收该对象。注意这里并不存在引用计数变为负数的情况，如果池子里的某个对象在收到系统发送过来的消息之前引用计数已经变为 0，那么该对象立刻就被销毁了，当系统消息到来的时候，该对象已经不存在，即内存地址为空，而向一个空对象做任何操作都是没有反应也没有影响的。</p>
-<p>runloop 内部有一个自动释放池，当 runloop 开启时，就会自动创建一个自动释放池，当 runloop 在休息之前会释放掉自动释放池的东西，然后重新创建一个新的空的自动释放池，当 runloop 被唤醒重新开始跑圈时，Timer、Source 等新的事件就会放到新的自动释放池中，当 runloop 退出的时候也会被释放。</p>
-<p>说道内存相关，自然就有内存泄漏的相关处理，我之前总结了大部分内存泄漏的情况，具体请看 <a href="https://www.jianshu.com/p/1b06751130c8" target="_blank" rel="noopener">iOS开发系列之内存泄漏分析（上）</a>和 <a href="https://www.jianshu.com/p/d0008f28053f" target="_blank" rel="noopener">iOS开发系列之内存泄漏分析（下）</a>。</p>
-<h3 id="6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，"><a href="#6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，" class="headerlink" title="6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，"></a>6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，</h3><p>当用户按下 home 键后，一般 10s 左右 app 就进入了挂起状态，挂起状态的 app 是没有任何活动的。特殊的比如播放音乐、使用定位相关服务、使用 voip（音视频点对点）服务，是可以向系统申请让 app 一直在后台运行的。所以有的公司是采用播放一个无声的音乐来让 app 保持活跃状态，需要注意的是，这种方法会导致上架被拒。</p>
-<h3 id="7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，"><a href="#7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，" class="headerlink" title="7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，"></a>7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，</h3><p>iOS 的离线推送原理是，由后台对接苹果服务器，app 每次启动后上传自己的设备 token 给后台，当发送需要推送的消息时，由后台找到对应的设备 token，用苹果规定的格式，将消息和 token 一起发给苹果负责推送的服务器 APNs，然后由苹果服务器找到该设备，在系统的层面展示这条推送消息。包括后台 JAVA 代码的全套流程专业解析请看<a href="https://www.cnblogs.com/taintain1984/p/3716642.html" target="_blank" rel="noopener">这里</a>。</p>
-<p>另外还有一种推送机制叫做 pushkit，pushkit 区别与普通 APNs 的地方是，它不会弹出通知，而是直接唤醒你的 app，进入回调，也就是说，可以在用户没点击 app 启动的情况下，就运行我们自己写的代码，这样的可操作性就大多了，但由于这种推送会在用户不知情的情况就启动 app，苹果的审核也较为严格。</p>
-<h3 id="8、杀掉进程，主线程停止，下班休息。"><a href="#8、杀掉进程，主线程停止，下班休息。" class="headerlink" title="8、杀掉进程，主线程停止，下班休息。"></a>8、杀掉进程，主线程停止，下班休息。</h3><p>其实还想加更多的东西进去，不过目前也没好的思路，欢迎评论。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">开发</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iOS开发系列之内存泄漏分析（上）
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/12/06/iOS%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8B%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS开发系列之内存泄漏分析（下）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、点击图标，开始上班，开启主线程，开始跑-runloop，"><span class="toc-number">1.</span> <span class="toc-text">1、点击图标，开始上班，开启主线程，开始跑 runloop，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、主线程开始绘制-UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面"><span class="toc-number">2.</span> <span class="toc-text">2、主线程开始绘制 UI，开启子线程去本地查询存储的信息，拿到数据后回到主线程刷新界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、接收到用户输入、点击、滑动等操作，开始处理，"><span class="toc-number">3.</span> <span class="toc-text">3、接收到用户输入、点击、滑动等操作，开始处理，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，"><span class="toc-number">4.</span> <span class="toc-text">4、开始网络请求，等待返回的数据，拿到数据后返回主线程刷新界面，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存"><span class="toc-number">5.</span> <span class="toc-text">5、重复3、4，间歇性休息放松，自动清理掉不使用的对象，释放内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、午休，进入后台，作为一个进程存在挂起，runloop-休眠，"><span class="toc-number">6.</span> <span class="toc-text">6、午休，进入后台，作为一个进程存在挂起，runloop 休眠，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、接收到推送，提醒用户点开-app，休息结束，继续工作，runloop-模式转变，"><span class="toc-number">7.</span> <span class="toc-text">7、接收到推送，提醒用户点开 app，休息结束，继续工作，runloop 模式转变，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、杀掉进程，主线程停止，下班休息。"><span class="toc-number">8.</span> <span class="toc-text">8、杀掉进程，主线程停止，下班休息。</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2019/12/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2019/12/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -315,8 +225,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
